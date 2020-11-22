@@ -4,6 +4,7 @@ const verifyRoute = require('./verifyRoute');
 const verifyDir = require('./verifyDir');
 const readDir = require('./readDir');
 const readFile = require('./readFile');
+const verifyOptions = require('./verifyOptions');
 const isMd = require('./isMd');
 const findMd = require('./findMd');
 
@@ -20,6 +21,7 @@ module.exports = (pathname) => new Promise((resolve) =>  {
           .then(data => findMd(data, route))
           .then(par => readFile(par))
           .then(data => {
+            verifyOptions(data, pathname)
             arrLinks = data;
             resolve(arrLinks)
           })
@@ -28,6 +30,7 @@ module.exports = (pathname) => new Promise((resolve) =>  {
         isMd(route)
           .then(par => readFile(par))
           .then(data => {
+            verifyOptions(data, pathname)
             arrLinks = data;
             resolve(arrLinks)
           })
