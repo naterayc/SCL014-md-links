@@ -34,13 +34,13 @@ Md-links retornara todos los links que encuentre.
 
 Pasándole un archivo extension .md :
 ~~~
-$ naterayc-md-links ./archivo.md
+$ naterayc-mdlinks ./archivo.md
 ./archivo.md https.tulink.com tu link
 ./archivo.md https.linkaalgo.com link a algo
 ~~~
 Pasándole un directorio :
 ~~~
-$ naterayc-md-links ./
+$ naterayc-mdlinks ./
 ./archivo.md https.tulink.com tu link
 ./archivo.md https.linkaalgo.com link a algo
 ~~~
@@ -50,7 +50,7 @@ MdLinks tambien recibe Options:
 ### Validate (--validate || --v)
 Realiza una petición http a cada link que encuentre e imprime el estado de la respuesta.
 ~~~
-$ naterayc-md-links ./archivo.md --v
+$ naterayc-mdlinks ./archivo.md --v
 ./archivo.md https.tulink.com tu link 200 OK!
 ./archivo.md https.linkaalgo.com link a algo 404 FAIL
 ~~~
@@ -59,7 +59,7 @@ $ naterayc-md-links ./archivo.md --v
 Imprimirá la cantidad total de links encontrados, y la cantidad de links únicos.
 
 ~~~
-$ naterayc-md-links ./archivo.md --s
+$ naterayc-mdlinks ./archivo.md --s
 Total: 2
 Unique: 2
 ~~~
@@ -68,16 +68,19 @@ Unique: 2
 Imprimirá el total de links encontrados, la cantidad de links únicos y el número de links rotos.
 
 ~~~
-$ naterayc-md-links ./archivo.md --s --v
+$ naterayc-mdlinks ./archivo.md --s --v
 Total: 2
 Unique: 2
 Broken: 0
 ~~~
 
 ## Módulo
-MdLinks tambien puede ser requerido como un módulo.
+MdLinks tambien puede ser requerido como un módulo. E imprimira un array de objetos con todos los links encontrados.
 
 ~~~js
 const mdLinks = require('naterayc-md-links/md-links');
 mdLinks("./archivo.md")
+.then(data => {
+    .....
+})
 ~~~
