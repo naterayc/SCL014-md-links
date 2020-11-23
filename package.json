@@ -1,14 +1,14 @@
 {
   "name": "naterayc-md-links",
-  "version": "0.1.11",
+  "version": "0.1.16",
   "dependencies": {
     "chalk": "^4.1.0",
     "node-fetch": "^2.6.1",
     "yargs": "^16.1.1"
   },
   "bin": {
-    "naterayc-md-links": "md-links.js"
-  },   
+    "naterayc-mdlinks": "index.js"
+  },
   "description": "md-links",
   "main": "index.js",
   "directories": {
